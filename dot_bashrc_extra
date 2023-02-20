@@ -1,0 +1,51 @@
+# .bashrc_extra
+# https://github.com/solutionroute/dotfiles/blob/master/.bashrc_extra
+# Should be sourced from ~/.bashrc
+[[ $DISPLAY ]] && shopt -s checkwinsize
+
+# not all distros set window titles; include st*
+case ${TERM} in
+  st*|alacritty|xterm*|rxvt*|kitty|kterm|gnome*)
+    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
+    export COLORTERM=truecolor
+    ;;
+  screen*)
+    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
+    ;;
+esac
+
+# aliases
+alias la="ls -a"
+alias ll="ls -al"
+alias l="ls -l"
+# git
+alias gs="git status"
+alias gd="git diff"
+
+# vi mode for the commandline win; this is also done in ~/.inputrc with a tweak 
+set -o vi
+
+# fzf truly is a must!
+if hash fzf 2>/dev/null; then
+	[[ $- == *i* ]] && source "/usr/share/fzf/completion.bash" 2> /dev/null
+	source "/usr/share/fzf/key-bindings.bash" 2> /dev/null
+fi
+
+# don't otherwise muck with root's environment, we shouldn't be running
+# user apps from there anyway
+if [ $USER != "root" ]; then
+    # nodejs - global packages per user, avoids need for sudo in: npm i -g <pkgname>
+    # https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
+    export NPM_CONFIG_PREFIX=~/.npm-global
+
+	mkdir -p $HOME/go/bin $HOME/.cargo/bin
+	PATH="$PATH:$HOME/bin:$HOME/go/bin:$NPM_CONFIG_PREFIX/bin:$HOME/.local/bin:$HOME/.cargo/bin"
+	export PATH
+
+
+	# source any private keys and such
+	if [ -f "$HOME/.env" ]; then
+		. $HOME/.env
+	fi
+fi
+

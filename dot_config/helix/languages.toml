@@ -1,0 +1,18 @@
+[[language]]
+name = "go"
+auto-format = true
+formatter = { command = "gofumpt" }
+
+# [[language]]
+# name  = "ego"
+# scope = "source.ego"
+# file-types = [ "ego" ]
+# roots = ["go.mod"]
+# grammar = "embedded-template"
+
+[[language]]
+name = "markdown"
+language-server = { command = "ltex-ls" }
+file-types = ["md"]
+scope = "source.markdown"
+roots = []

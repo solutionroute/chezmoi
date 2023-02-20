@@ -1,0 +1,110 @@
+# adanac, a dark/transparent theme with gentle colors
+# some options need a corresponding configuration tweak, see:
+# https://docs.helix-editor.com/themes.html
+
+"ui.background" = "background"
+"ui.background.separator" = { fg = "gray" }
+"ui.text" = "text" # set text to something like red to see what isn't picked up by other rules
+
+"ui.cursor" = { modifiers = ["reversed"] }
+"ui.cursor.match" = { fg = "light-yellow", underline = { color = "light-yellow", style = "line" } }
+"ui.cursor.primary" = { modifiers = ["reversed", "slow_blink"] }
+"ui.cursor.secondary" = { modifiers = ["reversed"] }
+"ui.cursorline.primary" = { bg = "cursorline" } # enable cursorline in config.toml
+"ui.help" = { bg = "background", fg = "light-green" }
+"ui.linenr" = { fg = "light-gray" }
+"ui.linenr.selected" = { fg = "text" }
+"ui.menu" = { fg = "text" }
+"ui.menu.selected" = { modifiers = ["reversed"] }
+"ui.menu.scroll" = { fg = "light-gray" }
+"ui.popup" = { bg = "background", fg = "light-green" }
+"ui.selection" = { bg = "gray" }
+"ui.statusline" = { fg = "text" }
+"ui.statusline.inactive" = { fg = "light-gray" }
+"ui.statusline.normal" = { fg = "black", bg = "blue" }
+"ui.statusline.insert" = { fg = "black", bg = "green" }
+"ui.statusline.select" = { fg = "black", bg = "magenta" }
+"ui.virtual.indent-guide" = "gray"
+"ui.virtual.ruler" = { bg = "gray" }
+"ui.virtual.whitespace" = "gray"
+"ui.window" = { fg = "white" }
+
+# syntax
+"attribute" = "yellow"
+"class.around" = "yellow"
+"comment" = { fg = "light-gray", modifiers = ["italic"] }
+"constant" = "yellow"
+"constant.builtin" = "light-red"
+"constant.builtin.boolean" = "light-red"
+"constant.character.escape" = "light-cyan"
+"constant.numeric" = "yellow"
+"constructor" = "light-blue"
+"function" = "light-blue"
+"keyword" = "light-magenta"
+"keyword.control.return" = "red"                          # not yet supported in go
+"label" = "light-magenta"
+"namespace" = "light-magenta"
+"operator" = "text"
+"puctuation" = "yellow"
+"special" = "light-blue"
+"string" = "light-green"
+"type" = "light-yellow"
+"variable" = "text"
+"variable.other.member" = "light-blue"
+
+"markup.heading" = "light-blue"
+"markup.list" = "light-red"
+"markup.bold" = { fg = "light-yellow", modifiers = ["bold"] }
+"markup.italic" = { fg = "light-magenta", modifiers = ["italic"] }
+"markup.link.url" = { fg = "yellow", underline = { color = "yellow", style = "line" } }
+"markup.link.text" = "light-red"
+"markup.quote" = "light-cyan"
+"markup.raw" = "green"
+"markup.normal" = { fg = "blue" }
+"markup.insert" = { fg = "green" }
+"markup.select" = { fg = "magenta" }
+
+# gitter line
+"diff.plus" = "light-green"
+"diff.delta" = "light-blue"
+"diff.delta.moved" = "blue"
+"diff.minus" = "light-red"
+
+# info area
+"ui.gutter" = "gray"
+"info" = "light-blue"
+"hint" = "light-gray"
+"debug" = "light-gray"
+"warning" = "light-yellow"
+"error" = "light-red"
+
+"diagnostic.info" = { underline = { color = "light-blue", style = "dotted" } }
+"diagnostic.hint" = { underline = { color = "light-gray", style = "double_line" } }
+"diagnostic.debug" = { underline = { color = "light-gray", style = "dashed" } }
+"diagnostic.warning" = { underline = { color = "light-yellow", style = "curl" } }
+"diagnostic.error" = { underline = { color = "light-red", style = "curl" } }
+
+[palette]
+# most colors from http://terminal.sexy/
+background = "#1d1f21" # not set, I prefer transparent with a dark subtle image behind my terminal
+text = "#c5c8c6"
+cursorline = "#282a2e"
+# 16 x 2:
+black = "#3b4252"
+gray = "#4c5363"
+red = "#bf616a"
+green = "#a3be8c"
+yellow = "#ebcb8b"
+blue = "#81a1c1"
+magenta = "#b48ead"
+cyan = "#88c0d0"
+white = "#e5e9f0"
+light-black = "#465780"
+light-gray = "#5d6474"
+light-red = "#d06f79"
+light-green = "#b1d196"
+light-yellow = "#f0d399"
+light-blue = "#8cafd2"
+light-magenta = "#c895bf"
+light-cyan = "#93ccdc"
+light-white = "#e7ecf4"

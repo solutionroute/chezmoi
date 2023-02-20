@@ -1,0 +1,10 @@
+#!/bin/sh
+# https://github.com/solutionroute/dotfiles
+# dwm window manager startup
+
+# source xprofile for elements common to both startx and Desktop Manager
+# (lightdm/sddm/...) startup
+. ~/.xprofile
+
+dbus-run-session dwm 2> ~/.dwm.log
+

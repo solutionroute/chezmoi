@@ -1,0 +1,25 @@
+# mike watkins https://github.com/solutionroute/dotfiles/config/helix ...
+theme = "adanac"
+
+[editor]
+bufferline = "multiple"
+color-modes = true
+cursorline = true
+line-number = "relative"
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.indent-guides]
+render = true
+
+[keys.normal]
+"backspace" = "command_mode"
+tab = ":bn"
+S-tab = ":bp"
+C-s = ":w"
+";" = { "r" = ":reflow"  }  # select area to reflow first
+esc = ["collapse_selection", "keep_primary_selection"]
+
+[keys.select]
+";" = { "r" = ":reflow"  }  # select area to reflow first

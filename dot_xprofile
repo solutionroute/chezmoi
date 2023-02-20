@@ -1,0 +1,61 @@
+#!/bin/bash
+# https://github.com/solutionroute/dotfiles
+# .xprofile is used by Display Managers such as lightdm/lxdm/sddm
+# To avoid duplication, this file is sourced by ~/.xinitrc for startx
+
+HOSTNAME=`uname -n`
+export OS_RELEASE=$(grep -oP '(?<=^ID=).+' /etc/os-release | tr -d '"' | tr '[:upper:]' '[:lower:]')
+export XDG_CURRENT_DESKTOP="X-Generic"
+
+xrdb -merge ~/.config/xinit/.Xresources-${HOSTNAME}
+
+# pipewire is not started as a service on void; is on arch
+case "$OS_RELEASE" in
+    void )
+        pipewire &
+        pipewire-pulse &
+        ;;
+    arch )
+        ;;
+esac
+
+case "$HOSTNAME" in
+    wabbit ) 
+        # allow alacritty to scale similarly to laptop
+        export WINIT_X11_SCALE_FACTOR="1.5";
+        # selects DisplayPort-1 input on rh display
+        redshift &
+        sudo ddcutil -d 2 setvcp 60 0x0f;
+        xrandr --output HDMI-A-0 --primary --output DisplayPort-1 --right-of HDMI-A-0;;
+        # colour temp of screen
+    # lapin ) ;; 
+    # pika ) ;; 
+    # hoppy ) ;;
+esac
+
+# init keyring
+eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
+
+# export keyring globals
+export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
+
+# Make CAPSLOCK useful (ctrl); preference is to set in /etc/X11/xorg.conf.d/00-keyboard.conf
+# with Option "XkbOptions" "terminate:ctrl_alt_bksp,caps:none,ctrl:nocaps,"
+# setxkbmap -option "ctrl:nocaps"
+
+# To select & store, interactively run: nitrogen /path/to/wallpaper/dir
+nitrogen --restore 
+
+# compositing enables alpha/transparency, used to de-emphasize inactive windows
+# with a dark background, st and alacritty terminals set to fully transparent (bg only)
+picom -b --backend glx --vsync
+
+# register slock as screen lock handler
+xss-lock slock &
+xset s 600 # 5 minute dim/lock timeout
+
+# Status bar for dwm, see https://github.com/solutionroute/suckless-patches
+slstatus &
+
+# don't start dwm here; the DM or startx/.xinitrc will do that
+

@@ -1,0 +1,39 @@
+# Import paths must be abs, not relative
+import:
+   - ~/.config/alacritty/nordfox.yml
+
+window:
+  # Background opacity 0.0 to 1.0 (opaque)
+  opacity: 0.7 
+  dynamic_title: true
+
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors: true
+
+# Font combos, roughly equivalent visual font size and line spacing
+
+# This font spec for InconsolataGo more or less matches the metrics of Deja
+# Vu/Hack and similar fontkks:
+font:
+  normal:
+    # the go variant aligns parentheses and brackets better for lowercase letters.
+    family: InconsolataGo Nerd Font Mono
+    # family: Inconsolata Nerd Font Mono
+  size: 9
+  # offset, integer, y modifies line spacing
+  offset:
+    y: -2
+
+# DejaVuSansMono/Hack/GoMono all have the same font metrics
+# font:
+#   normal:
+#     # Deja Vu Sans Mono - is "monospace" on my system
+#     family: DejaVuSansMono Nerd Font
+#     # Hack is very semilar to DejaVuSansMono save for obvious differences in i and some punctuation
+#     # family: Hack Nerd Font Mono
+#     # family: GoMono Nerd Font
+#
+#   # point size int or float
+#   # 7.5 on x11 on laptop; 12 on Wayland desktop
+#   size: 7.5
+#

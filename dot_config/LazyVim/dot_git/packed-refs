@@ -1,0 +1,12 @@
+# pack-refs with: peeled fully-peeled sorted 
+99ee77a03d54553ce784da0e887fa8c1abeec865 refs/remotes/origin/main
+1b7a702edc572f2434c094823f9bf150525d9391 refs/remotes/origin/release-please--branches--main--components--LazyVim
+058f6e75e3408a2ab415fca37d3241e9fe7f158d refs/tags/stable
+^dc45a2813b98319886da03835a05cc287ea88cf6
+66197242078d9c41e42cd9af843cad397aafe73c refs/tags/v0.1.0-alpha
+5b8935b383df627b165c826b726ed51dff4b5717 refs/tags/v0.2.0-alpha
+b890129aecfd507b9527b17259b586df65481ed2 refs/tags/v0.2.1-alpha
+97996faf75c33a9487653be7dd59ecd39c028e52 refs/tags/v0.2.2-alpha
+201a3d171e6ddce1dd3e2cd4278f08fc7461a281 refs/tags/v0.3.0-alpha
+11839bf6a326c9837fea2ad76fd609efe39480aa refs/tags/v0.4.0-alpha
+dc45a2813b98319886da03835a05cc287ea88cf6 refs/tags/v1.0.0
