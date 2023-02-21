@@ -1,6 +1,5 @@
 #!/bin/sh
-# https://github.com/solutionroute/dotfiles/blob/master/bin/screenshot.sh
-# Liberally borrowed and modified from https://github.com/LukeSmithxyz/voidrice/blob/master/.local/bin/maimpick
+# modified from https://github.com/LukeSmithxyz/voidrice/blob/master/.local/bin/maimpick
 
 # needs maim, xdotool, xclip and dmenu (not installing in case of a custom mod to demnu)
 # for f in maim xdotool xclip; do
@@ -12,19 +11,23 @@
 # 	fi
 # done
 
-# DEST=$HOME
-DEST="$HOME/Downloads"
+# add a symlink to this script in /usr/bin if necessary - for dwm menu
+if ! test -h "/usr/bin/screenshot"; then
+	sudo ln -sv $0 /usr/bin/screenshot
+fi
+
+DEST="$HOME/Pictures/screenshots"
 if [ ! -d $DEST ]; then
 	mkdir -p $DEST
 fi
-FNAME="$DEST/screenshot-$(date '+%y%m%d-%H%M-%S').png" 
+FNAME="$DEST/screenshot-$(date '+%y%m%d-%H%M-%S').png"
 
 # ModKey1|
 case "$(printf "a selected area\\ncurrent window\\nfull screen\\na selected area (copy)\\ncurrent window (copy)\\nfull screen (copy)" | dmenu -l 6 -i -p "Screenshot which area?")" in
-	"a selected area") maim -s $FNAME;; 
-	"current window") maim -i "$(xdotool getactivewindow)" $FNAME ;;
-	"full screen") maim $FNAME ;;
-	"a selected area (copy)") maim -s | xclip -selection clipboard -t image/png ;;
-	"current window (copy)") maim -i "$(xdotool getactivewindow)" | xclip -selection clipboard -t image/png ;;
-	"full screen (copy)") maim | xclip -selection clipboard -t image/png ;;
+"a selected area") maim -s $FNAME ;;
+"current window") maim -i "$(xdotool getactivewindow)" $FNAME ;;
+"full screen") maim $FNAME ;;
+"a selected area (copy)") maim -s | xclip -selection clipboard -t image/png ;;
+"current window (copy)") maim -i "$(xdotool getactivewindow)" | xclip -selection clipboard -t image/png ;;
+"full screen (copy)") maim | xclip -selection clipboard -t image/png ;;
 esac
