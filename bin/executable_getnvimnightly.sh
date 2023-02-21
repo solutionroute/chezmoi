@@ -4,8 +4,7 @@
 LOCALBINDIR=$HOME/.local/bin
 TARGET=nvim-linux64
 
-mkdir -p $HOME/bin
-
+mkdir -p $LOCALBINDIR/bin
 cd $LOCALBINDIR
 # remove any prior extracted nvim directory
 if test -d "$TARGET"; then
@@ -31,5 +30,4 @@ else
 	# recreate the symlink in case we've moved target
 	sudo rm /usr/bin/nvim
 	sudo ln -sv $LOCALBINDIR/$TARGET/bin/nvim /usr/bin/nvim
-	#
 fi
