@@ -1,0 +1,3 @@
+#!/bin/bash
+# ensures chrome uses gnome-keyring, otherwise stored passwords will be largely unavailable
+/usr/bin/google-chrome-stable --password-store=gnome
