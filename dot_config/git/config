@@ -1,0 +1,5 @@
+[user]
+	email = github@mikewatkins.ca
+	name = Mike Watkins
+[push]
+	followTags = true
