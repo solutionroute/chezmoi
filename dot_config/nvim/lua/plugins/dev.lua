@@ -10,7 +10,6 @@ return {
         "gopls",
         "html-lsp",
         "json-lsp",
-        "ltex-ls",
         "lua-language-server",
         "marksman",
         "python-lsp-server",
