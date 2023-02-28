@@ -1,0 +1,6 @@
+0000000000000000000000000000000000000000 bf6dc0d384cf2e7dc687794746493a5cc114b6c8 Mike Watkins <github@mikewatkins.ca> 1674090780 -0800	clone: from github.com:solutionroute/nvim-lazy-lsp.git
+bf6dc0d384cf2e7dc687794746493a5cc114b6c8 bf6dc0d384cf2e7dc687794746493a5cc114b6c8 Mike Watkins <github@mikewatkins.ca> 1674244479 -0800	reset: moving to HEAD
+bf6dc0d384cf2e7dc687794746493a5cc114b6c8 775fce096749b313ceaed9c382c6b8d84a46278f Mike Watkins <github@mikewatkins.ca> 1674244484 -0800	pull: Fast-forward
+775fce096749b313ceaed9c382c6b8d84a46278f 0aba73532fba532bf4f4183ae10c493aab4c203e Mike Watkins <github@mikewatkins.ca> 1674268362 -0800	pull: Fast-forward
+0aba73532fba532bf4f4183ae10c493aab4c203e 98b7faccf0344212d2f21aafa594cd48fe6836a3 Mike Watkins <github@mikewatkins.ca> 1674268392 -0800	commit: installs lsps
+98b7faccf0344212d2f21aafa594cd48fe6836a3 bbc92b104e5c6d3b6aa2594f4736e6ef9430f1f9 Mike Watkins <github@mikewatkins.ca> 1674268406 -0800	commit: wip update
