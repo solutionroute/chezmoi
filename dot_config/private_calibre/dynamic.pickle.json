@@ -1,0 +1,49 @@
+{
+  "add books dialog dir": "/home/mw/Books/tech/go",
+  "add books dialog dir-last-used-filter-spec-all-files": false,
+  "choose library location": "/home/mw/Books/calibre-golang",
+  "sort_history": [
+    [
+      "timestamp",
+      false
+    ],
+    [
+      "authors",
+      true
+    ],
+    [
+      "timestamp",
+      false
+    ],
+    [
+      "timestamp",
+      false
+    ],
+    [
+      "authors",
+      true
+    ],
+    [
+      "timestamp",
+      false
+    ],
+    [
+      "authors",
+      true
+    ],
+    [
+      "timestamp",
+      false
+    ],
+    [
+      "authors",
+      true
+    ],
+    [
+      "timestamp",
+      false
+    ]
+  ],
+  "welcome_wizard_device": "kindle_pw",
+  "welcome_wizard_was_run": true
+}
