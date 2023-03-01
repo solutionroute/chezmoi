@@ -1,5 +1,6 @@
 lastupdatecheck: 0
 recentrepos:
+- /home/mw/src/sites/vfr
 - /home/mw/src/knockr
 - /home/mw/src/dotfiles
 - /home/mw/.local/share/chezmoi
