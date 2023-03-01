@@ -1,0 +1,6 @@
+! .Xresources-${HOSTNAME} is loaded from .xprofile
+
+Xcursor.size: 32
+Xcursor.theme: Adwaita
+
+! vim:ft=xdefaults

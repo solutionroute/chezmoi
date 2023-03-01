@@ -1,0 +1,14 @@
+! .Xresources-${HOSTNAME} is loaded from .xprofile
+
+! Scaling:
+! 2x / 200%
+! Xft.dpi: 192
+! 1.75x
+Xft.dpi: 168
+! 1.5x
+! Xft.dpi: 144
+
+Xcursor.size: 32
+Xcursor.theme: Adwaita
+
+! vim:ft=xdefaults
