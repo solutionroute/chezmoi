@@ -1,0 +1,11 @@
+lastupdatecheck: 0
+recentrepos:
+- /home/mw/src/knockr
+- /home/mw/src/dotfiles
+- /home/mw/.local/share/chezmoi
+- /home/mw/src/baseline
+- /home/mw/src/rid
+- /home/mw/src/pj
+startuppopupversion: 5
+customcommandshistory: []
+hidecommandlog: false
