@@ -11,11 +11,6 @@
 # 	fi
 # done
 
-# add a symlink to this script in /usr/bin if necessary - for dwm menu
-if ! test -h "/usr/bin/screenshot"; then
-	sudo ln -sv $0 /usr/bin/screenshot
-fi
-
 DEST="$HOME/Pictures/screenshots"
 if [ ! -d $DEST ]; then
 	mkdir -p $DEST
